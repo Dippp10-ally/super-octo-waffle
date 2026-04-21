@@ -1,0 +1,32 @@
+name: Generate Co-Authored Commits
+
+on:
+  workflow_dispatch:
+
+jobs:
+  pair-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "Dippp10-ally"
+          git config --global user.email "dipikabarkat@gmail.com"
+
+      - name: Generate commits
+        run: |
+          for i in {1..10}
+          do
+            echo "Commit $i $(date)" >> pair.txt
+            git add pair.txt
+            git commit -m "Pair commit $i
+
+Co-authored-by: vamansworld786-arch <vamansworld786@gmail.com>"
+          done
+
+      - name: Push commits
+        run: |
+          git push
