@@ -1,5 +1,4 @@
 # super-octo-waffle909090
-Testing Pair Extraordinaire badge
-Update README for collaboration
+git commit -m "Improve README
 
-Co-authored-by: vamansworld786-arch <vamansworld786@gmail.com>
+Co-authored-by: vamansworld786-arch <vamansworld786@gmail.com>"
