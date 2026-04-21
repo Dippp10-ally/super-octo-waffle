@@ -3,6 +3,9 @@ name: Generate Co-Authored Commits
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   pair-commit:
     runs-on: ubuntu-latest
@@ -22,7 +25,6 @@ jobs:
           do
             echo "Commit $i $(date)" >> pair.txt
             git add pair.txt
-
             git commit -m "Pair commit $i" \
               -m "Co-authored-by: vamansworld786-arch <vamansworld786@gmail.com>"
           done
